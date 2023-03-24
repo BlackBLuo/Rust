@@ -14,13 +14,6 @@ pub trait Blocker {
     fn block_time(&self) -> Duration;
 }
 
-/// 为[`Light`]实现[`Blocker`] `trait`
-/// ```rust
-/// fn main() {
-///     let red = Light::RED(3);
-///     println!("red blocker : {:?}", red.block_time());
-/// }
-/// ```
 impl Blocker for Light {
     fn block_time(&self) -> Duration {
         match &self {
